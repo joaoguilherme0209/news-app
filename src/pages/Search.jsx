@@ -7,7 +7,7 @@ import { ArticleCard } from '@/components/ArticleCard.jsx';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { setPageStatus } from '@/store/uiSlice.js';
-import { hasFavoriteTopics, FAVORITE_TOPICS } from '@/constants/topics.js';
+import { hasFavoriteTopics, FAVORITE_TOPICS, getFavoriteTopicLabel } from '@/constants/topics.js';
 import {
   Dialog,
   DialogContent,
@@ -394,7 +394,7 @@ export function Search() {
                   className="h-3.5 w-3.5"
                   onCheckedChange={() => toggleModalTopic(topic)}
                 />
-                <span className="capitalize">{topic}</span>
+                <span className="capitalize">{getFavoriteTopicLabel(topic)}</span>
               </label>
             ))}
           </div>

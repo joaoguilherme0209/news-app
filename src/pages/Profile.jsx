@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { FAVORITE_TOPICS } from '@/constants/topics.js';
+import { FAVORITE_TOPICS, getFavoriteTopicLabel } from '@/constants/topics.js';
 const FREQUENCIES = [
   { value: 'daily', label: 'Diário' },
   { value: 'weekly', label: 'Semanal' },
@@ -121,7 +121,7 @@ export function Profile() {
                           className="h-3 w-3"
                           onCheckedChange={() => toggleTopic(topic)}
                         />
-                        <span className="capitalize">{topic}</span>
+                        <span className="capitalize">{getFavoriteTopicLabel(topic)}</span>
                       </label>
                     );
                   })}
